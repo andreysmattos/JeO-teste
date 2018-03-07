@@ -16,8 +16,8 @@ CREATE TABLE `cadastro` (
 /* tabela telefone */
 CREATE TABLE `telefone` (
 	idTelefone int not null primary key auto_increment,
-	telefone varchar(15),
-	celular varchar(15) not null,
+	telefone varchar(20),
+	celular varchar(20) not null,
 	contatoWpp tinyint(1) not null,
 	id_cadastro int not null unique,
 	foreign key (id_cadastro)

@@ -36,12 +36,12 @@
             <div class="row">
               <div class="form-group col-md-4">
                 <label for="nome">Nome completo</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" minlength="2" required>
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" required>
               </div>
 
               <div class="form-group col-md-8">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="exemplo@exemplo.com">
+                <input type="text" class="form-control" id="email" name="email" placeholder="exemplo@exemplo.com" required minlength="6">
                 <small id="emailHelp" class="form-text text-muted">Entre com um email valido.</small>
               </div>
             </div>
@@ -51,12 +51,12 @@
             <div class="row">
                 <div class="form-group col-md-4">
                   <label for="telefone">Telefone</label>
-                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(xxx) xxxxxxxxx">
+                  <input type="text" class="form-control" id="telefone" name="telefone" placeholder="(xxx) xxxxxxxxx" minlength="15">
                 </div>
 
                 <div class="form-group col-md-4">
                   <label for="celular">Celular</label>
-                  <input type="text" class="form-control" id="celular" name="celular" placeholder="(xxx) xxxxxxxxx">
+                  <input type="text" class="form-control" id="celular" name="celular" placeholder="(xxx) xxxxxxxxx" required minlength="15">
                 </div>
 
                 <div class="form-group col-md-4">
@@ -77,7 +77,7 @@
 
               <div class="form-group col-md-4">
                   <label for="estado">Estado</label>
-                  <select class="custom-select" name="estado" id="estado">
+                  <select class="custom-select" name="estado" id="estado" required>
                     <option value="false"></option>
 
                     
@@ -109,7 +109,7 @@
           <div class="row">
             <div class="form-group">
               <label for="mensagem">Mensagem</label>
-              <textarea class="form-control" id="mensagem" rows="3" name="mensagem"></textarea>
+              <textarea class="form-control" id="mensagem" rows="3" name="mensagem" required minlength="6"></textarea>
             </div>
           </div>
         <!-- fim row5 -->
@@ -134,6 +134,8 @@
     <script src="src/js/jquery.min.js"></script> 
     <!-- JQuery MASK -->
     <script src="src/js/jquery.mask.js"></script>
+    <!-- JQuery Validate -->
+    <script src="src/js/jquery.validate.min.js"></script>
     <!-- Bootstrap JS -->
     <script src="src/js/bootstrap.min.js"></script>
     <!-- Main JS -->

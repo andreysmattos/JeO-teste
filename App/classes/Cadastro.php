@@ -29,7 +29,11 @@ class Cadastro implements ICadastro
 		$this->validaCidade();
 		$this->validaMensagem();
 
+		// Atenção: se você NÃO deseja sanitizar os dados é só apagar a linha abaixo
+		$this->sanitize();
+
 		echo json_encode(['status'=>true]);
+		return true;
 
 	}
 
@@ -69,6 +73,10 @@ class Cadastro implements ICadastro
 
 	public function validaTelefone()
 	{
+		if(mb_strlen($this->telefone) > 1 && mb_strlen($this->getTelefone()) <= 13){
+			echo json_encode(['status'=>false, 'msg'=>'Informe um Telefone com mais de 11 caracteres.']);
+			die();
+		}
 		return true;
 	}
 
@@ -79,7 +87,7 @@ class Cadastro implements ICadastro
 			die();
 		}
 
-		if(mb_strlen($this->getCelular()) <= 11){
+		if(mb_strlen($this->getCelular()) <= 14){
 			echo json_encode(['status'=>false, 'msg'=>'Informe um Celular com mais de 11 caracteres. Incluindo DDD. No formato (051) 0000-0000']);
 			die();
 		}
@@ -129,6 +137,18 @@ class Cadastro implements ICadastro
 
 
 
+	public function sanitize()
+	{
+		$this->setNome(filter_var($this->nome, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setEmail(filter_var($this->email, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setTelefone(filter_var($this->telefone, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setCelular(filter_var($this->celular, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setWpp(filter_var($this->wpp, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setEstado(filter_var($this->estado, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setCidade(filter_var($this->cidade, FILTER_SANITIZE_SPECIAL_CHARS))
+  ->setMensagem(filter_var($this->mensagem, FILTER_SANITIZE_SPECIAL_CHARS));
+	}
+
 
 	//Getters
 	public function getNome()
@@ -143,7 +163,7 @@ class Cadastro implements ICadastro
 
 	public function getTelefone()
 	{
-		$this->telefone;
+		return $this->telefone;
 	}
 
 	public function getCelular()
