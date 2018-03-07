@@ -26,16 +26,16 @@
           <br/>
           <br/>
           <!-- Formulario -->
-          <form method="post">
+          <form method="post" id="valida">
             <div class="row">
               <div class="form-group col-md-4">
                 <label for="nome">Nome completo</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
               </div>
 
               <div class="form-group col-md-8">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="exemplo@exemplo.com">
+                <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@exemplo.com">
                 <small id="emailHelp" class="form-text text-muted">Entre com um email valido.</small>
               </div>
             </div>
@@ -104,7 +104,7 @@
             </div>
           </div>
         <!-- fim row5 -->
-
+        <input type="submit" class="btn btn-primary">
           </form>
 
         </div>
@@ -118,7 +118,9 @@
     </div>
     <!-- JQuery -->
     <script src="js/jquery.min.js"></script>
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js" type="text/javascript"></script>
   </body>
 </html>
