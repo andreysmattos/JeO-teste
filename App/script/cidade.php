@@ -15,10 +15,10 @@ if(mb_strlen($sigla) > 2){
 
 $cidades = App\classes\Endereco::listCidades($sigla);
 
-echo '<label for="cidade">Cidade</label><select class="custom-select" id="cidade" name="cidade">';
+echo '<label for="cidade">Cidade</label> <select class="custom-select" id="cidade" name="cidade">';
 
 foreach($cidades as $cidade){
-	echo '<option value="'. $cidade['Nome']. '">'.$cidade['Nome'].'</option>';
+	echo '<option value="'. $cidade['Nome']. '">'.$cidade['Nome'].'</option>' . PHP_EOL;
 
 }
 

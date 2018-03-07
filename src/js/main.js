@@ -12,8 +12,8 @@ $(function(){
 		var valida = $.ajax({
 		url: 'App/script/valida.php',
 		method: 'post',
-		data: form
-		//dataType: 'json'
+		data: form,
+		dataType: 'json'
 		})
 
 
@@ -48,6 +48,10 @@ $(function(){
 			$('#city').html(e);
 		})
 	});
+
+
+
+
 
 
 

@@ -30,39 +30,6 @@ class Cadastro implements ICadastro
 		$this->validaMensagem();
 
 		echo json_encode(['status'=>true]);
-		/*
-		if($this->validaNome()){
-			return json_encode(['status'=>false, 'msg'=>'Informe um Nome valido.']);
-		}
-
-		if($this->validaEmail()){
-			return json_encode(['status'=>false, 'msg'=>'Informe um Email valido.']);
-		}
-
-		if($this->validaTelefone()){
-			return json_encode(['status'=>false, 'msg'=>'Informe um Telefone valido.']);
-		}
-
-		if($this->validaCelular()){
-			return json_encode(['status'=>false, 'msg'=>'Informe um Celular valido.']);
-		}
-
-		if($this->validaWpp()){
-			return json_encode(['status'=>false, 'msg'=>'Confirme se deseja receber mensagem via Wpp.']);
-		}
-
-		if($this->validaEstado()){
-			return json_encode(['status'=>false, 'msg'=>'Informe um Estado valido.']);
-		}
-
-		if($this->validaCidade()){
-			return json_encode(['status'=>false, 'msg'=>'Informe uma Cidade valida.']);
-		}
-
-		if($this->validaMensagem()){
-			return json_encode(['status'=>false, 'msg'=>'Informe uma Mensagem valida.']);
-		}
-		*/
 
 	}
 
@@ -70,6 +37,11 @@ class Cadastro implements ICadastro
 	{
 		if(!$this->getNome()){
 			echo json_encode(['status'=>false, 'msg'=>'Informe um Nome']);
+			die();
+		}
+
+		if(mb_strlen($this->getNome()) <= 2){
+			echo json_encode(['status'=>false, 'msg'=>'Informe um Nome com mais de 2 caracteres.']);
 			die();
 		}
 	}
@@ -83,6 +55,11 @@ class Cadastro implements ICadastro
 
 		if(!filter_var($this->getEmail(), FILTER_VALIDATE_EMAIL)){
 			echo json_encode(['status'=>false, 'msg'=>'O Email informado não é Valido.']);
+			die();
+		}
+
+		if(mb_strlen($this->getEmail()) <= 6){
+			echo json_encode(['status'=>false, 'msg'=>'Informe um Email com mais de 6 caracteres.']);
 			die();
 		}
 
@@ -101,6 +78,11 @@ class Cadastro implements ICadastro
 			echo json_encode(['status'=>false, 'msg'=>'Informe um Celular.']);
 			die();
 		}
+
+		if(mb_strlen($this->getCelular()) <= 11){
+			echo json_encode(['status'=>false, 'msg'=>'Informe um Celular com mais de 11 caracteres. Incluindo DDD. No formato (051) 0000-0000']);
+			die();
+		}
 		return true;
 	}
 
@@ -115,7 +97,7 @@ class Cadastro implements ICadastro
 
 	public function validaEstado()
 	{
-		if(!$this->getEstado()){
+		if($this->getEstado() === 'false'){
 			echo json_encode(['status'=>false, 'msg'=>'Informe um Estado.']);
 			die();
 		}
@@ -135,6 +117,11 @@ class Cadastro implements ICadastro
 	{
 		if(!$this->getMensagem()){
 			echo json_encode(['status'=>false, 'msg'=>'Informe uma Mensagem.']);
+			die();
+		}
+
+		if(mb_strlen($this->getMensagem()) <= 10){
+			echo json_encode(['status'=>false, 'msg'=>'Informe uma mensagem de pelo menos 10 caracteres.']);
 			die();
 		}
 		return true;

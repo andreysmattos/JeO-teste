@@ -36,7 +36,7 @@
             <div class="row">
               <div class="form-group col-md-4">
                 <label for="nome">Nome completo</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome">
+                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome" minlength="2" required>
               </div>
 
               <div class="form-group col-md-8">
