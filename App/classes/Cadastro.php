@@ -32,7 +32,7 @@ class Cadastro implements ICadastro
 		// Atenção: se você NÃO deseja sanitizar os dados é só apagar a linha abaixo
 		$this->sanitize();
 
-		echo json_encode(['status'=>true]);
+		
 		return true;
 
 	}
@@ -219,7 +219,7 @@ class Cadastro implements ICadastro
 
 	public function setWpp($wpp)
 	{
-		$this->wpp = $wpp;
+		$this->wpp = (int) $wpp;
 		return $this;
 	}
 

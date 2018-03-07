@@ -50,8 +50,7 @@ class ServiceCadastro implements IServiceCadastro
 			echo json_encode(['status'=>true]);
 		} else {
 			//registra no monolog
-			echo $id . "ESSE É O ID ";
-			print_r($stmt2->errorInfo());
+			echo json_encode(['status'=>false, 'msg'=>'erro no banco']);
 		}
 
 

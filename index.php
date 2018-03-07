@@ -62,10 +62,10 @@
                 <div class="form-group col-md-4">
                   <label>Deseja contato por Whatsapp:</label> <br/>
                   <label class="radio-inline" for="sim">
-                    <input type="radio" name="contatoWpp" id="sim" value="s">Sim
+                    <input type="radio" name="contatoWpp" id="sim" value="1">Sim
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="contatoWpp" id="nao" value="n">Não
+                    <input type="radio" name="contatoWpp" id="nao" value="0">Não
                   </label>
                 </div>
             </div>
