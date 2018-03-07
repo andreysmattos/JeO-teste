@@ -1,3 +1,9 @@
+<?php
+  require_once "vendor/autoload.php";
+
+  $estados = App\classes\Endereco::listEstados();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -8,7 +14,7 @@
     <title>J&amp;O Software</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +41,7 @@
 
               <div class="form-group col-md-8">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="exemplo@exemplo.com">
+                <input type="text" class="form-control" id="email" name="email" placeholder="exemplo@exemplo.com">
                 <small id="emailHelp" class="form-text text-muted">Entre com um email valido.</small>
               </div>
             </div>
@@ -56,10 +62,10 @@
                 <div class="form-group col-md-4">
                   <label>Deseja contato por Whatsapp:</label> <br/>
                   <label class="radio-inline" for="sim">
-                    <input type="radio" name="contatoWpp" id="sim" value="1">Sim
+                    <input type="radio" name="contatoWpp" id="sim" value="s">Sim
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="contatoWpp" id="nao" value="0">Não
+                    <input type="radio" name="contatoWpp" id="nao" value="n">Não
                   </label>
                 </div>
             </div>
@@ -72,22 +78,25 @@
               <div class="form-group col-md-4">
                   <label for="estado">Estado</label>
                   <select class="custom-select" name="estado" id="estado">
-                    <option>Estado</option>
-                    <option>Rio Grande do Sul</option>
-                    <option>São Paulo</option>
-                    <option>Santa Catarina</option>
+                    <option value="false"></option>
+
+                    
+                    <?php 
+                    foreach($estados as $estado){ 
+                    echo '<option value="'. $estado['Uf']. '">'.$estado['Nome'].'</option>' . PHP_EOL;
+                    }
+                    ?>
+
+                    
+                    
+
                   </select>
                 </div>
 
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-6" id="city">
                   <label for="cidade">Cidade</label>
-                  <select class="custom-select" id="cidade" name="cidade">
-                    <option>Cidade</option>
-                    <option>Novo Hamburgo</option>
-                    <option>São Leopoldo</option>
-                    <option>Porto Alegre</option>
-                  </select>
+                  <select class="custom-select" id="cidade" name="cidade" disabled></select>
                 </div>
 
         
@@ -107,6 +116,11 @@
         <input type="submit" class="btn btn-primary">
           </form>
 
+
+          <div id="msg">
+          <!-- Aqui retorna a mensagem do ajax -->
+          </div>
+
         </div>
 
 
@@ -117,10 +131,12 @@
        <!-- fim row1 -->
     </div>
     <!-- JQuery -->
-    <script src="js/jquery.min.js"></script>
+    <script src="src/js/jquery.min.js"></script> 
+    <!-- JQuery MASK -->
+    <script src="src/js/jquery.mask.js"></script>
     <!-- Bootstrap JS -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="src/js/bootstrap.min.js"></script>
     <!-- Main JS -->
-    <script src="js/main.js" type="text/javascript"></script>
+    <script src="src/js/main.js" type="text/javascript"></script>
   </body>
 </html>
