@@ -144,13 +144,13 @@ class Cadastro implements ICadastro
 	public function sanitize()
 	{
 		$this->setNome(filter_var($this->nome, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setEmail(filter_var($this->email, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setTelefone(filter_var($this->telefone, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setCelular(filter_var($this->celular, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setWpp(filter_var($this->wpp, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setEstado(filter_var($this->estado, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setCidade(filter_var($this->cidade, FILTER_SANITIZE_SPECIAL_CHARS))
-  ->setMensagem(filter_var($this->mensagem, FILTER_SANITIZE_SPECIAL_CHARS));
+		->setEmail(filter_var($this->email, FILTER_SANITIZE_SPECIAL_CHARS))
+		->setTelefone(filter_var($this->telefone, FILTER_SANITIZE_SPECIAL_CHARS))
+		->setCelular(filter_var($this->celular, FILTER_SANITIZE_SPECIAL_CHARS))
+		->setWpp(filter_var($this->wpp, FILTER_SANITIZE_SPECIAL_CHARS))
+		->setEstado(filter_var($this->estado, FILTER_SANITIZE_SPECIAL_CHARS))
+		->setCidade(filter_var($this->cidade, FILTER_SANITIZE_SPECIAL_CHARS))
+		->setMensagem(filter_var($this->mensagem, FILTER_SANITIZE_SPECIAL_CHARS));
 	}
 
 

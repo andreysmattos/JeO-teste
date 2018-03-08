@@ -10,10 +10,10 @@ $(function(){
 
 		
 		var valida = $.ajax({
-		url: 'App/script/valida.php',
-		method: 'post',
-		data: form,
-		dataType: 'json'
+			url: 'App/script/valida.php',
+			method: 'post',
+			data: form,
+			dataType: 'json'
 		})
 
 
@@ -54,41 +54,41 @@ $(function(){
 
 
 
-$("#valida").validate({
-       rules : {
-             nome:{
-                    required:true,
-                    minlength:3
-             },
-             email:{
-                    required:true
-             },
-             mensagem:{
-                    required:true
-             }                                 
-       },
-       messages:{
-             nome:{
-                    required:"Por favor, informe seu nome.",
-                    minlength:"O Nome deve ter pelo menos 3 caracteres."
-             },
-             email:{
-                    required:"É necessário informar um email. ",
-                    minlength:"O Email deve ter pelo menos 6 caracteres."
-             },
-             mensagem:{
-                    required:"A mensagem não pode ficar em branco.",
-                    minlength:"A mensagem deve ter pelo menos 10 caracteres."
-             },
-             celular:{
-                    required:"O Celular não pode ficar em branco.",
-                    minlength:"O Celular deve ter pelo menos DDD 3 + 9 números."
-             },
-             telefone:{
-                    minlength:"O Telefone deve ter pelo menos DDD 3 + 9 números."
-             }      
-       }
-});
+	$("#valida").validate({
+		rules : {
+			nome:{
+				required:true,
+				minlength:3
+			},
+			email:{
+				required:true
+			},
+			mensagem:{
+				required:true
+			}                                 
+		},
+		messages:{
+			nome:{
+				required:"Por favor, informe seu nome.",
+				minlength:"O Nome deve ter pelo menos 3 caracteres."
+			},
+			email:{
+				required:"É necessário informar um email. ",
+				minlength:"O Email deve ter pelo menos 6 caracteres."
+			},
+			mensagem:{
+				required:"A mensagem não pode ficar em branco.",
+				minlength:"A mensagem deve ter pelo menos 10 caracteres."
+			},
+			celular:{
+				required:"O Celular não pode ficar em branco.",
+				minlength:"O Celular deve ter pelo menos DDD 3 + 9 números."
+			},
+			telefone:{
+				minlength:"O Telefone deve ter pelo menos DDD 3 + 9 números."
+			}      
+		}
+	});
 
 
 
