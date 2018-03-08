@@ -1,7 +1,6 @@
 <?php
 require_once "vendor/autoload.php";
 
-$estados = App\classes\Endereco::listEstados();
 ?>
 
 <!DOCTYPE html>
@@ -80,26 +79,15 @@ $estados = App\classes\Endereco::listEstados();
 
               <div class="form-group col-md-4">
                 <label for="estado">Estado</label>
-                <select class="custom-select" name="estado" id="estado" required autocomplete="off">
-                  <option value="false"></option>
-
-
-                  <?php 
-                  foreach($estados as $estado){ 
-                    echo '<option value="'. $estado['Uf']. '">'.$estado['Nome'].'</option>' . PHP_EOL;
-                  }
-                  ?>
-
-
-
-
-                </select>
+                <select class="custom-select form-control select2-offscreen" name="estado" id="estado" required> <option selected disabled>All</option></select>
               </div>
 
 
               <div class="form-group col-md-6" id="city">
                 <label for="cidade">Cidade</label>
-                <select class="custom-select" id="cidade" name="cidade" disabled></select>
+                <select class="custom-select form-control select2-offscreen" id="cidade" name="cidade">
+                  <option selected disabled>All</option>
+                </select>
               </div>
 
 

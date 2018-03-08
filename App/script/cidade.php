@@ -3,25 +3,11 @@
 require_once "../../vendor/autoload.php";
 
 
-$sigla = filter_input(INPUT_POST, 'cidade');
 
-if(mb_strlen($sigla) > 2){
-	//USUARIO MAL INTENCIONADO! REPORTAR NO MONOLOG
-	die();
+$resultado = App\classes\Endereco::listCidades($_GET['estado'],$_GET['q']);
+
+foreach($resultado as $cidade){
+	$json [] = ['id'=>$cidade['Nome'], 'text'=>$cidade['Nome']];
 }
 
-$cidades = App\classes\Endereco::listCidades($sigla);
-
-echo '<label for="cidade">Cidade</label> <select class="custom-select" id="cidade" name="cidade">
-<option value="false"></option>';
-
-foreach($cidades as $cidade){
-	echo '<option value="'. $cidade['Nome']. '">'.$cidade['Nome'].'</option>' . PHP_EOL;
-
-}
-
-
-
-
-
-echo '</select>';
+echo json_encode($json);

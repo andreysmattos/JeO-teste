@@ -109,7 +109,7 @@ class Cadastro implements ICadastro
 
 	public function validaEstado()
 	{
-		if($this->getEstado() === 'false'){
+		if(empty($this->getEstado())){
 			echo json_encode(['status'=>false, 'msg'=>'Informe um Estado.']);
 			die();
 		}
@@ -118,7 +118,7 @@ class Cadastro implements ICadastro
 
 	public function validaCidade()
 	{
-		if($this->getCidade() === 'false'){
+		if(empty($this->getCidade())){
 			echo json_encode(['status'=>false, 'msg'=>'Informe uma Cidade.']);
 			die();
 		}
