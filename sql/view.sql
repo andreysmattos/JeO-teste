@@ -1,4 +1,4 @@
-/* Vew para testar se os dados estão certinhos */
+/* View para testar se os dados estão certinhos */
 
 CREATE view completo AS 
 SELECT c.nome, c.email, c.estado, c.cidade, t.telefone, t.celular, t.contatoWpp, c.mensagem

@@ -1,0 +1,2 @@
+[2018-03-08 19:50:05] Banco.ERROR: Error ao tentar conexão com banco de dados. Verifique a classe Conn --- Msg de erro: could not find driver --- arquivo: /opt/lampp/htdocs/JeO/App/conn/Conn.php linha: 12 [] []
+[2018-03-08 19:50:14] Banco.ERROR: Error ao tentar conexão com banco de dados. Verifique a classe Conn --- Msg de erro: could not find driver --- arquivo: /opt/lampp/htdocs/JeO/App/conn/Conn.php linha: 12 [] []

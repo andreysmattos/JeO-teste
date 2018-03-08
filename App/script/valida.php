@@ -9,7 +9,8 @@ use App\classes\ServiceCadastro;
 
 $c = new Cadastro;
 
-//Optei por não usar o metodo construtor, acho que assim o código fica mais legível
+//Optei por não usar o metodo construtor, acho que assim o código fica mais legível.
+//Os dados estão sendo sanitizados dentro da classe, é só deletar a chamada da função caso queira
 $c->setNome(filter_input(INPUT_POST, 'nome'))
 ->setEmail(filter_input(INPUT_POST, 'email'))
 ->setTelefone(filter_input(INPUT_POST, 'telefone'))
