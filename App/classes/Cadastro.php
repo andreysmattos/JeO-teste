@@ -96,10 +96,14 @@ class Cadastro implements ICadastro
 
 	public function validaWpp()
 	{
+
 		if(!$this->getWpp()){
 			echo json_encode(['status'=>false, 'msg'=>'Informe se deseja receber dados via Wpp.']);
 			die();
 		}
+
+		$this->wpp = ($this->wpp == 's') ? 1 : 0;
+
 		return true;
 	}
 
@@ -114,7 +118,7 @@ class Cadastro implements ICadastro
 
 	public function validaCidade()
 	{
-		if(!$this->getCidade()){
+		if($this->getCidade() === 'false'){
 			echo json_encode(['status'=>false, 'msg'=>'Informe uma Cidade.']);
 			die();
 		}
@@ -219,7 +223,7 @@ class Cadastro implements ICadastro
 
 	public function setWpp($wpp)
 	{
-		$this->wpp = (int) $wpp;
+		$this->wpp = $wpp;
 		return $this;
 	}
 

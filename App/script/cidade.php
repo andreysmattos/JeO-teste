@@ -1,5 +1,3 @@
-<link href="../src/css/bootstrap.min.css" rel="stylesheet">
-
 <?php
 
 require_once "../../vendor/autoload.php";

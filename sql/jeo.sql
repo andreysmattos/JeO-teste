@@ -7,7 +7,7 @@ use `jeo`;
 CREATE TABLE `cadastro` (
 	idCadastro int not null primary key auto_increment,
 	nome varchar(100) not null,
-	email varchar(255) not null unique,
+	email varchar(255) not null,
 	cidade varchar(100) not null,
 	estado char(2) not null,
 	mensagem TEXT not null

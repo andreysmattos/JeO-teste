@@ -62,10 +62,10 @@
                 <div class="form-group col-md-4">
                   <label>Deseja contato por Whatsapp:</label> <br/>
                   <label class="radio-inline" for="sim">
-                    <input type="radio" name="contatoWpp" id="sim" value="1">Sim
+                    <input type="radio" name="contatoWpp" id="sim" value="s">Sim
                   </label>
                   <label class="radio-inline">
-                    <input type="radio" name="contatoWpp" id="nao" value="0">Não
+                    <input type="radio" name="contatoWpp" id="nao" value="n">Não
                   </label>
                 </div>
             </div>
@@ -77,7 +77,7 @@
 
               <div class="form-group col-md-4">
                   <label for="estado">Estado</label>
-                  <select class="custom-select" name="estado" id="estado" required>
+                  <select class="custom-select" name="estado" id="estado" required autocomplete="off">
                     <option value="false"></option>
 
                     

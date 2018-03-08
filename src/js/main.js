@@ -20,7 +20,10 @@ $(function(){
 		valida.done(function(e){
 			console.log(e);
 			if(e.status){
-				$('#msg').html('<div class="alert alert-success"> Cadastrado com sucesso.</div>.')
+				$('#msg').html('<div class="alert alert-success"> Cadastrado com sucesso.</div>.');
+				$('#valida').each(function(){
+					this.reset();
+				});
 			} else {
 				$('#msg').html('<div class="alert alert-danger"> <strong>Atenção!</strong> '+e.msg+'</div>')
 			}
